@@ -29,10 +29,10 @@ module ApiPagination
         ApiPagination.instance_variable_set(:@paginator, :will_paginate)
       end
 
-      begin; require 'kaminari'; rescue LoadError; end
-      if defined?(Kaminari)
-        ApiPagination.instance_variable_set(:@paginator, :kaminari)
-      end
+      # begin; require 'kaminari'; rescue LoadError; end
+      # if defined?(Kaminari)
+      #   ApiPagination.instance_variable_set(:@paginator, :kaminari)
+      # end
 
       STDERR.puts <<-EOC unless defined?(Kaminari) || defined?(WillPaginate)
 Warning: api-pagination relies on either Kaminari or WillPaginate. Please
